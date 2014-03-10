@@ -73,6 +73,12 @@
         }
     }
 
+    @include aboveOrEquals(pem(480))
+    {
+        .icon__control { right:$bsu; }
+        .icon__menu { left:$bsu; }
+    }
+
     .user-id {
         position:relative;
         display:block;

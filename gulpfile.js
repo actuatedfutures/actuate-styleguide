@@ -119,8 +119,9 @@ gulp.task('libScripts',function()
 gulp.task('scripts',function()
 {
     return gulp.src('src/js/**/*.js')
+        .pipe(changed('lrl'))
         .pipe(uglify())  
-        .pipe(gulp.dest('build/js'))
+        .pipe(gulp.dest('build/js'))        
         .pipe(livereload(slr));
 });
 

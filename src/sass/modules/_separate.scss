@@ -5,12 +5,20 @@
 */
 .separate {
 
-    @extend .grid;
+    @extend .grid--full;
+    margin-bottom:$bsu/2;
 
-    .pair {@extend .grid__item;}
+    .pair {
+        @extend .grid__item;
 
-    .label,
-    .figure {}
+        margin-bottom:$bsu/4;        
+        border-bottom:1px solid rgba(black,0.05);
+
+        &:last-child {
+            margin-bottom:0;
+            border-bottom:none;
+        }        
+    }    
 
     .label {
         float:left;
@@ -22,6 +30,7 @@
     .figure {
         float:right;
         font-size:pem(32);
+        @extend .m--none;
         @include aboveOrEquals(pem(768))
         {
             font-size:pem(42);
@@ -35,5 +44,26 @@
         font-size:pem(72);
         line-height:1;
         padding-bottom:10%;
+    }
+
+    @include aboveOrEquals(pem(480))
+    {
+        .pair {
+            width:33.33%; 
+            border:none; 
+            border-right:1px solid rgba(black,0.05);
+            &:last-child {
+                border-right:none; 
+            }  
+        }
+        .label,
+        .figure {
+            float:none;
+            text-align:center;
+        }
+        .figure {
+            font-size:3em;
+        }
+        
     }
 }

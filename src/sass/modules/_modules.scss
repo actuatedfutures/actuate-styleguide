@@ -5,6 +5,7 @@
     @extend .-cream;
 
     .module__header {
+
         padding:0;
         margin-bottom:$bsu;
 
@@ -16,17 +17,21 @@
 
         .icon {
             display:block;            
-            float:left;
+            float:right;
             font-size:1.5em;
-            border-right:1px solid rgba($lk-cream,0.5);
+            border-left:1px solid rgba($lk-cream,0.5);
             padding:$bsu*3/4 $bsu;
-            margin-right:1em;
+            margin-left:1em;
             top:0;
         }
     }
 
     .module__main {
-        margin:0 $bsu;
+        margin:0 $bsu;        
+        &.extra {
+            border-top:1px solid rgba(black,0.12);
+            padding-top:$bsu/2;
+        }
     }
 
     .module__full {
