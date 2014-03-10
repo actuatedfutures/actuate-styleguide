@@ -1,23 +1,75 @@
+/*
+    from inuit
+*/
+
 .linkgroup {
+
+    @extend .nav--stacked;
+    border-radius:4px;
+    border:1px solid $base-ui-color;
+
+    @include belowOrEquals(pem(479))
+    {
+        > li {
+
+            > a {
+                border-bottom:1px solid $base-ui-color;        
+            }
+
+            &:last-child > a {
+                border-bottom-width:0;
+            }
+        }        
+    }
+
+
+    @include aboveOrEquals(pem(480))
+    {
+        display:table;
+        width:100%;
+        border:none;
+
+        > li{
+            display:table-cell;
+
+            > a{
+                border:0 solid $base-ui-color;
+                border-width:1px;
+                border-left-width:0;
+            }
+
+            &:first-child > a{
+                border-left-width:1px;
+                border-top-left-radius:$brand-round;
+                border-bottom-left-radius:$brand-round;
+            }
+
+            &:last-child > a{
+                border-top-right-radius:$brand-round;
+                border-bottom-right-radius:$brand-round;
+            }
+        }
+    }
+
+
+
+
+    @extend .brand-face;
+    text-transform:uppercase;
+
     background-color:$lk-white;
-    border:1px solid $lk-grey;
-    @include border-radius(8px); 
     overflow:hidden;
     margin-bottom:1em;
+    text-align:center;
 
     a {
-        display:block;
         padding:0.7em;
         color:$lk-red;
         text-decoration:none;
-        font-size:1.2em;
-        &:not(:first-child) {
-            border-top:1px solid rgba($citu-grey,0.5);
-        }
-        // background:transparent url(../img/icons/chevron.svg) no-repeat scroll center right;
 
         &:hover {
-            background-color:#DDD;
+            color:white;
+            background-color:rgba(black,0.42);
         }
     }
 }

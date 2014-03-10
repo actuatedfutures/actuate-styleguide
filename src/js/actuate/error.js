@@ -1,0 +1,1 @@
+"undefined"==typeof actuate&&(actuate={}),function(r,e,a){a.error=function(r,e){alert("Oops, an error has occurred.\nThis error is known as: "+r+"."),log(r+": ",e)}}(jQuery,d3,actuate);

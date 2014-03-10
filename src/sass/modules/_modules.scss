@@ -1,61 +1,63 @@
 .module {
     clear:both;
-    padding:$bsu*3/4;
-    margin:0 $bsu/4 $bsu/2;    
+    padding:0;
+    margin:$bsu/4 $bsu/4 $bsu/2;    
+    @extend .-cream;
 
-    // &.-new {
-    //     padding:0;
-    //     @extend .colours-cream;
+    .module__header {
+        padding:0;
+        margin-bottom:$bsu;
 
-    //     .module__header {
-    //         padding:$bsu*3/4 $bsu;
-    //         margin-bottom:$bsu;
+        .heading {
+            padding:$bsu*3/4 $bsu;
+            margin:0;
+            border:none;            
+        }
 
-    //         .heading {
-    //             padding:0;
-    //             margin:0;
-    //             border:none;
-    //         }
-    //     }
+        .icon {
+            display:block;            
+            float:left;
+            font-size:1.5em;
+            border-right:1px solid rgba($lk-cream,0.5);
+            padding:$bsu*3/4 $bsu;
+            margin-right:1em;
+            top:0;
+        }
+    }
 
-    //     .module__main {
-    //         margin:0 $bsu;
-    //     }
+    .module__main {
+        margin:0 $bsu;
+    }
 
-    //     .module__full {
-    //         margin:-$bsu 0 $bsu;
-    //     }
+    .module__full {
+        margin:-$bsu 0 $bsu;
+    }
 
-    //     .module__footer {
-    //         margin:0 $bsu;   
-    //         padding-bottom:$bsu;
+    .module__footer {
+        margin:0 $bsu;   
+        padding-bottom:$bsu;
 
-    //         & > *:last-child {
-    //             margin-bottom:0;
-    //         }
-    //     }
-    // }
+        & > *:last-child {
+            margin-bottom:0;
+        }
+    }
 
-    .coloured {@extend %shadow;}
+    // .coloured {@extend %shadow;}
 
     & > *:last-child {
         margin-bottom:0;
     }
 
-    .grid__item & {
-        margin:0 0 $bsu;
-    }
+    // .grid__item & {
+    //     margin:0 0 $bsu;
+    // }
 
     @include aboveOrEquals(pem(480))
     {
-        &.coloured {
-            padding:$bsu;
-            margin:0 $bsu $bsu;
-            // @include border-radius($bsu/8);    
-            .grid__item & {
-                margin:0 0 $bsu;
-            }
-        }        
+        margin:$bsu;
+        // .grid__item & {
+        //     margin:0 0 $bsu;
+        // }
     }
 
     @include box-shadow(0px 4px 0px rgba(black,0.22));

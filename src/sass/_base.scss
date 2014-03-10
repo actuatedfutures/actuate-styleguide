@@ -107,7 +107,7 @@ label {
 
 .hi {
     @extend .brand-face;
-    @extend .colours-hi;
+    @extend .-hi;
     padding:0.2em 0.4em 0.2em 0.5em;
     white-space:nowrap;    
 
@@ -125,19 +125,19 @@ label {
     background:rgba(black,0.42);
 }
 
-.grid {
-    clear:both;
-    @include aboveOrEquals(pem(480))
-    {
-        margin-left:0;
-        margin-right:$bsu;
+// .grid {
+//     clear:both;
+//     @include aboveOrEquals(pem(480))
+//     {
+//         margin-left:0;
+//         margin-right:$bsu;
 
-        .module & {
-            margin-left:-$bsu;
-            margin-right:0;
-        }
-    }
-}
+//         .module & {
+//             margin-left:-$bsu;
+//             margin-right:0;
+//         }
+//     }
+// }
 
 .welcome-btn {
 

@@ -1,0 +1,9 @@
+.grid--full {
+    @extend .grid;
+    margin-left:0;
+
+    > .grid__item {
+
+        padding-left:0;
+    }
+}

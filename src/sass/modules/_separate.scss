@@ -1,0 +1,39 @@
+
+/*
+    Where you're trying to have two things (e.g. a label and a number) which are left and right aligned.
+
+*/
+.separate {
+
+    @extend .grid;
+
+    .pair {@extend .grid__item;}
+
+    .label,
+    .figure {}
+
+    .label {
+        float:left;
+        font-size:pem(26);
+        margin-bottom:0;
+        @extend .m--none;
+    }
+
+    .figure {
+        float:right;
+        font-size:pem(32);
+        @include aboveOrEquals(pem(768))
+        {
+            font-size:pem(42);
+        }
+    }
+
+    .extra {
+        display:block;
+        width:100%;
+        text-align:center;
+        font-size:pem(72);
+        line-height:1;
+        padding-bottom:10%;
+    }
+}

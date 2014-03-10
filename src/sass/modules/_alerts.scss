@@ -1,6 +1,6 @@
 .alert {
     @extend .citu-yellow-bg;
-    @extend .citu-grey;
+    @extend .-grey;
     @extend %shadow;
 
     margin:0 $bsu/2;
@@ -20,7 +20,7 @@
 
 .btn-close {
 
-    @extend .colours-maroon;
+    @extend .-maroon;
 
     span {
         text-transform:uppercase;

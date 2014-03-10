@@ -34,7 +34,7 @@
     }
 
     .login__submit {
-        @extend .colours-maroon;
+        @extend .-maroon;
         height:100%;
         opacity:0.24;
         @include transition(opacity 500ms ease);

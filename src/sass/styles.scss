@@ -25,10 +25,47 @@
 /**
  * Setup
  */
-@import "colours";              // need this first for injecting into inuit.
-@import "vars";                 // then the inuit vars.
+@import "colours";         	// need this first for injecting into inuit.
+
+
+/*
+	Inuit variables.
+*/
+// basic colours and sizes.
+$base-font-family:  "LubalinPoo", Georgia, sans-serif;
+$base-ui-color:     $citu-grey;
+$brand-color:       $lk-red;
+$brand-face:        "nudista-web", sans-serif;
+$third-face:        "bebas-neue", sans-serif;
+
+// which inuit modules to pull in.
+$use-grids:         true; 
+$use-flexbox:       false;
+$use-columns:       false;
+$use-nav:           true;
+$use-options:       false;
+$use-pagination:    false;
+$use-breadcrumb:    false;
+$use-media:         true;
+$use-marginalia:    false;
+$use-island:        false;
+$use-block-list:    true;
+$use-matrix:        true;
+$use-split:         true;
+$use-this-or-this:  false;  
+$use-link-complex:  true;
+$use-flyout:        false;
+$use-arrows:        false;
+$use-sprite:        false;
+$use-icon-text:     false;
+$use-beautons:      false;
+$use-lozenges:      false;
+$use-rules:         true;
+$use-stats:         false;
+$use-greybox:       false;
 
 @import "inuit.css/inuit";  // then inuit.
+@import "modules/my_inuit";  // then inuit.
 
 // $bsu: $base-spacing-unit;       // grab this in a easier form to use.
 $bsu: ($base-spacing-unit / $base-font-size) * 1rem;
@@ -41,7 +78,6 @@ $bsu: ($base-spacing-unit / $base-font-size) * 1rem;
 
 @import "mixins";            
 
-     
 @import "base";                 
 @import "layout";
 
@@ -67,7 +103,8 @@ $bsu: ($base-spacing-unit / $base-font-size) * 1rem;
 @import "modules/now";
 @import "modules/status";
 @import "modules/bargraph";
-@import "modules/sofar";
+// @import "modules/sofar";
+@import "modules/separate";
 @import "modules/button";
 
 

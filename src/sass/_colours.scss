@@ -71,63 +71,63 @@ $lk-white:#F2EEE8;
     @extend .lk-cream-bg;    
 }
 
-.colours-cream {
+.-cream {
     @extend .citu-grey;
     @extend .lk-cream-bg;    
 }
 
-.colours-hi {
+.-hi {
     @extend .lk-red;
     @extend .lk-white-bg;    
 }
 
-.colours-turq {
+.-turq {
     @extend .lk-cream;
     @extend .lk-turq-bg;        
 }
 
-.colours-purple {
+.-purple {
     @extend .lk-cream;
     @extend .lk-purple-bg;        
 }
 
-.colours-maroon {
+.-maroon {
     @extend .lk-cream;
     @extend .lk-maroon-bg;        
 }
 
-.colours-blue {
+.-blue {
     @extend .lk-white;
     @extend .lk-blue-bg;        
 }
 
-.colours-sea {
+.-sea {
     @extend .lk-cream;
     @extend .lk-sea-bg;        
 }
 
-.colours-green {
+.-green {
     @extend .lk-cream;
     @extend .lk-green-bg;        
 }
 
-.colours-grey {
+.-grey {
     @extend .citu-yellow;
     @extend .lk-grey-bg;        
 }
 
-.colours-beige {
+.-beige {
     @extend .lk-white;
     background-color:rgba(black,0.12);
 }
 
-.colours-mint {
+.-mint {
     @extend .lk-blue;
     @extend .lk-mint-bg;        
     .heading {border-color:$lk-blue};
 }
 
-.colours-mustard {
+.-mustard {
     @extend .lk-cream;
     @extend .lk-mustard-bg;            
 }

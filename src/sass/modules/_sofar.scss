@@ -37,12 +37,12 @@
             padding-right:$bsu;    
         }        
     }
-    .grid__item {
-        @include aboveOrEquals(pem(481))
-        {
-            width:50%;
-        }
-    }
+    // .grid__item {
+    //     @include aboveOrEquals(pem(481))
+    //     {
+    //         width:50%;
+    //     }
+    // }
 }
 
 .sofar {

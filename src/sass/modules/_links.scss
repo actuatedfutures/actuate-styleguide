@@ -1,5 +1,5 @@
 .link-group {
-    @extend .colours-cream;
+    @extend .-cream;
     border:none;
     @include border-radius(8px); 
     overflow:hidden;
@@ -9,7 +9,7 @@
         &:last-child {border:none;}
         
         &:hover {
-            @extend .colours-mustard;
+            @extend .-mustard;
         }
         a {
             text-decoration:none;
