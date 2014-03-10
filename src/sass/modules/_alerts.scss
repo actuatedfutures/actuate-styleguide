@@ -1,0 +1,29 @@
+.alert {
+    @extend .citu-yellow-bg;
+    @extend .citu-grey;
+    @extend %shadow;
+
+    margin:0 $bsu/2;
+    padding:$bsu/2 $bsu $bsu;
+
+    @include media-query(lap) {
+        padding:$bsu/2 $bsu $bsu;
+        margin:0 $bsu;
+    }
+
+    @include media-query(desk) {
+        margin:0 $bsu * 4;
+    }
+
+    @include border-radius(0 0 $bsu $bsu);
+}
+
+.btn-close {
+
+    @extend .colours-maroon;
+
+    span {
+        text-transform:uppercase;
+        line-height:0.5em;
+    }
+}

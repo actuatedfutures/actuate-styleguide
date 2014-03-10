@@ -1,0 +1,121 @@
+.control {
+    position:relative;
+    background-color:$lk-white;
+    border:1px solid $lk-grey;
+    // @include border-radius($bsu/2); 
+    margin-bottom:1em;
+    border-bottom:0.20em solid rgba(black,0.62);
+
+    .cover {
+        position:absolute;
+        top:0;left:0;bottom:0;right:0;
+        background-color:rgba(white,0.5);
+        // display:none;
+    }
+
+    a {
+        display:block;
+        padding:0.5em;
+        color:$citu-grey;
+        @extend .cf;
+    }
+
+    .label {width:100%; text-align:center;padding:0.25em}
+    .switch {width:100%}
+
+    @include aboveOrEquals(pem(640))
+    {
+        .label {
+            width:60%;
+            text-align:left;
+            padding:0.15em 0 0 0.25em;
+        }
+        .switch {width:40%}        
+    }
+
+    .label {
+        @extend .third-face;
+        text-transform:uppercase;
+        font-size:1.5em;
+        float:left;
+        margin:0;
+    }
+
+    .switch {
+        position:relative;
+        float:right;
+
+        span {
+            @extend .brand-face;
+            box-shadow:inset 0 2px 1px rgba(black,0.22);
+            display:block;
+            width:50%;
+            float:left;
+            text-align:center;
+            background-color:$lk-grey;
+            color:$lk-white;
+            padding:0.5em;
+            text-transform:uppercase;
+            font-weight:700;
+            @include text-shadow(rgba(white, 0.7) 0px 0px 10px);
+            &:not(.cover)
+            {
+                // @include box-shadow(rgba(black, 0.7) 0px 0px 3px inset);    
+            }
+            
+            $rad:0.5em;
+
+            &.on {color:$lk-green; @include border-radius($rad 0 0 $rad);}
+            &.off {color:$lk-maroon; @include border-radius(0 $rad $rad 0);}
+
+            &.cover {
+                position:absolute;
+                top:0;left:0;
+                width:50%;height:100%;
+                background-color:$citu-grey;
+                @include opacity(0.95);
+                @include border-radius($rad 0 0 $rad);
+                @include transition-property(all);
+                @include transition-duration(0.5s);
+             
+                &.on {
+                    left:50%;
+                    @include border-radius(0 $rad $rad 0);
+                }
+            }
+        }
+    }
+}
+
+.controls--temp {
+    @extend .grid--full;
+
+    .display {
+
+        @extend .grid__item;
+        width:50%;
+        font-size:5em;
+        text-align:center;
+        padding:0.1em 0;
+
+        &.-changed {
+            @extend .citu-yellow;
+        }
+    }
+
+    .controls--updown {
+        @extend .grid__item;
+        width:50%;
+    }
+}
+
+.controls--updown {
+    .button {
+        text-align:center;
+
+        span {
+            display:block;
+            width:100%;
+        }
+    }
+}

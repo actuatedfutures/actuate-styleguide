@@ -1,0 +1,27 @@
+.link-group {
+    @extend .colours-cream;
+    border:none;
+    @include border-radius(8px); 
+    overflow:hidden;
+
+    li {
+        border-bottom:1px solid rgba(black,0.2);
+        &:last-child {border:none;}
+        
+        &:hover {
+            @extend .colours-mustard;
+        }
+        a {
+            text-decoration:none;
+        }
+        background:transparent url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNSIgaGVpZ2h0PSI1MCIgdmlld0JveD0iLTIwIC0yMCA3NSA5MCI+PHBvbHlnb24gZmlsbD0iIzk5OTk5OSIgcG9pbnRzPSI4Ljc4Nyw0IDQuNTQ0LDguMjQzIDIxLjUxNSwyNS4yMTQgNC41NDQsNDIuMTg1IDguNzg3LDQ2LjQyNyAzMCwyNS4yMTQiLz48L3N2Zz4=') no-repeat scroll center right;
+    }
+
+    .link-complex {
+        color:$citu-grey;
+    }
+
+    .link-complex__target {
+        color:inherit;
+    }
+}

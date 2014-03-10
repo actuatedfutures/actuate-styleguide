@@ -1,0 +1,66 @@
+.alpha,
+.beta,
+.gamma,
+.delta,
+.epsilon,
+.zeta {
+    // @extend .brand-face;
+}
+
+.heading {
+    @extend .third-face;
+    line-height:1em;
+    margin-bottom:$bsu/4;
+    padding-bottom:$bsu/4;
+    border-bottom:$bsu/5 solid $lk-cream;
+    font-size:1.5em;
+    font-weight:400;
+    letter-spacing:0.15em;
+}
+
+.markdown h2 {
+    @extend .heading;
+}
+
+.heading--noline {
+    @extend .heading;
+    margin-bottom:0;
+    border-bottom:none;
+}
+
+
+.page-title {
+    @extend .brand-face;
+    color:rgba(black,0.2);
+    font-size:1.5em;
+    line-height:1;
+    text-align:left;
+    font-weight:700;    
+    margin:$bsu/2 $bsu;
+    text-transform:uppercase;
+    letter-spacing:0.15em;
+    text-align:center;
+
+    @include aboveOrEquals(30em)
+    {
+        font-size:2em;
+    }
+}
+
+.icon--right {
+    float:right;
+    position:relative;
+    top:-1px;   
+}
+
+.icon--heading {
+    display:none;
+    position:relative;
+    top:-7px;
+    float:right;
+    color:$lk-beige;
+    background:rgba(black,0.15);
+    @include border-radius(50%);
+    padding:0.25em;
+    letter-spacing:0;
+}

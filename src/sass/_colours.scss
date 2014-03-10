@@ -1,0 +1,138 @@
+$citu-yellow:#FECB00;
+$lk-turq:#006D8D;
+$lk-red:#F04E30;
+$lk-beige:#CEC1A7;
+
+$lk-blue:#315473;
+$lk-grey:#A5A59F;
+$lk-maroon:#C93440;
+$lk-purple:#5C6383;
+
+$lk-mint:#9AD3B7;
+$lk-cream:#F4F0E5;
+$lk-sea:#67A2AB;
+$lk-mustard:#D2AF2B;
+
+$citu-grey:#4D4F53;
+$lk-green:#4C7249;
+$citu-blue:#0094B3;
+$lk-white:#F2EEE8;
+
+@mixin col-setup($name: "", $colour: "") {
+    
+    .#{$name} { 
+        color: #{$colour};
+        &:link,
+        &:visited {color: #{$colour};}
+
+        .rule {
+            color:#{$colour};
+        }
+    }
+    svg {
+        text.#{$name} { fill:#{$colour} }
+        rect.#{$name} { fill:#{$colour} }
+        path.#{$name} { fill:#{$colour} }
+    }
+    .#{$name}-bg { background-color: #{$colour} }
+}
+
+@include col-setup('citu-yellow', $citu-yellow);
+@include col-setup('lk-turq',$lk-turq);
+@include col-setup('lk-red',$lk-red);
+@include col-setup('lk-beige',$lk-beige);
+
+@include col-setup('lk-blue',$lk-blue);
+@include col-setup('lk-grey',$lk-grey);
+@include col-setup('lk-maroon',$lk-maroon);
+@include col-setup('lk-purple',$lk-purple);
+
+@include col-setup('lk-mint',$lk-mint);
+@include col-setup('lk-cream',$lk-cream);
+@include col-setup('lk-sea',$lk-sea);
+@include col-setup('lk-mustard',$lk-mustard);
+
+@include col-setup('citu-grey', $citu-grey);
+@include col-setup('lk-green',$lk-green);
+@include col-setup('citu-blue', $citu-blue);
+@include col-setup('lk-white',$lk-white);
+
+.lk-black-bg-22 {
+    background-color:rgba(black,0.22);
+}
+
+.colours-body {
+    @extend .lk-purple;
+    @extend .lk-beige-bg;    
+}
+
+.colours-head {
+    @extend .lk-red;
+    @extend .lk-cream-bg;    
+}
+
+.colours-cream {
+    @extend .citu-grey;
+    @extend .lk-cream-bg;    
+}
+
+.colours-hi {
+    @extend .lk-red;
+    @extend .lk-white-bg;    
+}
+
+.colours-turq {
+    @extend .lk-cream;
+    @extend .lk-turq-bg;        
+}
+
+.colours-purple {
+    @extend .lk-cream;
+    @extend .lk-purple-bg;        
+}
+
+.colours-maroon {
+    @extend .lk-cream;
+    @extend .lk-maroon-bg;        
+}
+
+.colours-blue {
+    @extend .lk-white;
+    @extend .lk-blue-bg;        
+}
+
+.colours-sea {
+    @extend .lk-cream;
+    @extend .lk-sea-bg;        
+}
+
+.colours-green {
+    @extend .lk-cream;
+    @extend .lk-green-bg;        
+}
+
+.colours-grey {
+    @extend .citu-yellow;
+    @extend .lk-grey-bg;        
+}
+
+.colours-beige {
+    @extend .lk-white;
+    background-color:rgba(black,0.12);
+}
+
+.colours-mint {
+    @extend .lk-blue;
+    @extend .lk-mint-bg;        
+    .heading {border-color:$lk-blue};
+}
+
+.colours-mustard {
+    @extend .lk-cream;
+    @extend .lk-mustard-bg;            
+}
+
+.colours-foot {
+    @extend .lk-turq;
+    @extend .lk-cream-bg;        
+}

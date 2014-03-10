@@ -1,0 +1,111 @@
+.header {
+    @extend .colours-head;
+    @extend %shadow;
+    position:relative;
+    z-index:42;    
+    font-size:1.5em;
+
+    @include aboveOrEquals(pem(480)) {        
+        font-size:2em;
+        .icon {
+            $pad:0.2em;
+            font-size:1em-$pad;
+            // padding-top:$pad;
+        }
+    }
+
+    @include aboveOrEquals(pem(768)) {
+        font-size:3em;
+    }
+
+    h1 { 
+        padding:$bsu/2 $bsu;
+        margin:0;
+        text-align:right;
+        font-size:inherit;
+        letter-spacing:0.25em;
+        font-weight:400;
+    }
+
+    a {
+        color:inherit;
+        text-decoration:none;
+        &:active,
+        &:hover {
+            color:$lk-blue;
+        }
+    }    
+
+    .icon {
+        position:absolute;        
+        top:($bsu) - 0.5;
+
+        @include aboveOrEquals(pem(480))
+        {
+            top:($bsu) - 0.3;
+        }
+
+        display:block;
+        text-transform:uppercase;
+        text-align:center;
+        &:after {
+            text-align:center;
+            @extend .brand-face;
+            font-size:10px;
+            display:block;
+            line-height:1;
+            margin-top:-4px;
+        }
+    }
+
+    .icon__control {
+        right:$bsu/2;
+        &:after {
+            content:'control';
+        }
+    }
+
+    .icon__menu {
+        left:$bsu/2;
+        span {margin:0;}
+        &:after {
+            content:'menu';
+        }
+    }
+
+    .user-id {
+        position:relative;
+        display:block;
+        padding:$bsu $bsu;
+        font-size:0.8em;
+        line-height:1;
+
+        @extend .brand-face;
+
+        p {margin:0}
+
+        span {
+            // color:$lk-red;
+            text-transform:uppercase;
+            font-size:0.62em;  
+            letter-spacing:0.2em;          
+            opacity:0.62;
+        }
+    }
+
+    .logout {
+        display:none;
+        position:absolute;
+        width:200px;
+        left:50%;top:0;
+        margin-left:-100px;
+        margin-top:$bsu/3;
+        background-color:rgba(black,0.42);
+        padding:$bsu;
+
+        &:after {
+            content:"?";
+        }
+
+    }
+}

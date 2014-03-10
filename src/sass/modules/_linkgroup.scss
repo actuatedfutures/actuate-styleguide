@@ -1,0 +1,23 @@
+.linkgroup {
+    background-color:$lk-white;
+    border:1px solid $lk-grey;
+    @include border-radius(8px); 
+    overflow:hidden;
+    margin-bottom:1em;
+
+    a {
+        display:block;
+        padding:0.7em;
+        color:$lk-red;
+        text-decoration:none;
+        font-size:1.2em;
+        &:not(:first-child) {
+            border-top:1px solid rgba($citu-grey,0.5);
+        }
+        // background:transparent url(../img/icons/chevron.svg) no-repeat scroll center right;
+
+        &:hover {
+            background-color:#DDD;
+        }
+    }
+}

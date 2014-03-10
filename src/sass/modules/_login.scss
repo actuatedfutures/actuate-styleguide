@@ -1,0 +1,59 @@
+.login {
+
+    max-width:26.67 * $bsu;
+    margin:0 auto;    
+
+    fieldset {
+        padding-top:$bsu/2;
+    }
+
+    .fields {
+        display:inline-block;
+        width:100%;                
+
+        @include media-query(lap) {
+            width:50%;
+            &:first-child {padding-right:$bsu/2;}
+            &:last-child {padding-left:$bsu/2;}
+        }
+
+        .label {
+            position:relative;
+            text-indent:0.5em;
+            @include transform(translate3d(0,100%,0));
+            @include transition(transform 500ms ease);
+
+            &.show {
+                @include transform(translate3d(0,0,0));
+            }
+        }
+
+        input {
+            position:relative;
+        }
+    }
+
+    .login__submit {
+        @extend .colours-maroon;
+        height:100%;
+        opacity:0.24;
+        @include transition(opacity 500ms ease);
+        @include transition(transform 500ms ease);
+        &.show {            
+            opacity:1;            
+        }
+        &:focus {
+            @include transform(translate3d(0,-3px,0));
+            @include box-shadow(3px 3px 0px rgba(black,0.2));
+        }
+        &:active {
+            @include transform(translate3d(0,0px,0));   
+        }
+    }
+}
+
+input {
+    padding:1em;
+    @include border-radius(0.5em);
+    border-color:rgba(black,0.2);
+}

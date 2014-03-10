@@ -1,0 +1,37 @@
+.menu_pages {    
+
+    .-list {        
+
+        @extend .nav;
+        margin-bottom:0;
+
+        > li {
+            display:block;            
+
+            &:last-child a {
+                border:none;
+            }
+
+            a {
+                display:block;
+                padding:$bsu/2 $bsu;
+                text-decoration:none;
+                border:1px solid rgba(black,0.1);                
+                border-width:0 0 1px;
+                
+                &:hover,
+                &:active {
+                    background-color:rgba(black,0.42);
+                }
+            }
+        }
+
+        text-align:justify;
+
+        &:after{
+          content: "";
+          width: 100%;
+          @include inline-block();
+        }
+    }
+}

@@ -1,0 +1,55 @@
+.button {
+    
+    @extend .cf;
+    @extend .brand-face;
+
+    clear:both;
+
+    display:block;
+    text-decoration:none;    
+
+    background-color:rgba(white, 0.76);
+    
+    /*
+        THIS IS NOW HERE TO UNHACK SOME STUFF I PUT IN 
+        FOR A REDESIGN AND THEN BACKED OFF OF. IT MUST
+        BE REMOOOOOOOOOOOOVED!!!!!
+    */
+    .module.coloured & {
+        background-color:rgba(white, 0.22);
+
+        &:hover,
+        &:active {
+            color:white;
+            background-color:rgba(black,0.42);
+        }        
+    }
+
+    padding:$bsu*0.5;
+    text-transform:uppercase;
+    
+    [class*="icon-"] {
+        position:relative;
+        float:right;
+        font-size:1.5em;
+
+        &.left {
+            float:left;
+            margin-right:0.25em;
+        }
+    }
+
+    &:hover,
+    &:active {
+        color:white;
+        background-color:rgba(black,0.42);
+    }
+
+    margin-bottom:0.25em;
+
+    &.-disabled {
+        pointer-events: none;
+        cursor: default;
+        @include opacity(0.2);
+    }
+}

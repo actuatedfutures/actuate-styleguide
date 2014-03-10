@@ -1,0 +1,35 @@
+.status__box {
+
+    display:table;
+    width:100%;
+    padding:0;
+    border-bottom:2px solid rgba(white,0.2);
+
+    &:last-child {
+        border:none;
+    }
+
+    .icon {
+        position:relative;
+        top:-0.05em;
+        font-size:3em;
+        @include opacity(0.62);
+        vertical-align:middle;
+    }
+    
+    .split__title {
+        vertical-align:middle;
+    }
+    
+    .status {
+        @extend .brand-face;
+        @extend .citu-yellow;
+        text-transform:uppercase;
+        letter-spacing:0.1em;
+    }
+
+    @include aboveOrEquals(pem(481)){
+        $size: 80;
+        .split {font-size:1.2em;}
+    }
+}

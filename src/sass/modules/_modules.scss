@@ -1,0 +1,119 @@
+.module {
+    clear:both;
+    padding:$bsu*3/4;
+    margin:0 $bsu/4 $bsu/2;    
+
+    // &.-new {
+    //     padding:0;
+    //     @extend .colours-cream;
+
+    //     .module__header {
+    //         padding:$bsu*3/4 $bsu;
+    //         margin-bottom:$bsu;
+
+    //         .heading {
+    //             padding:0;
+    //             margin:0;
+    //             border:none;
+    //         }
+    //     }
+
+    //     .module__main {
+    //         margin:0 $bsu;
+    //     }
+
+    //     .module__full {
+    //         margin:-$bsu 0 $bsu;
+    //     }
+
+    //     .module__footer {
+    //         margin:0 $bsu;   
+    //         padding-bottom:$bsu;
+
+    //         & > *:last-child {
+    //             margin-bottom:0;
+    //         }
+    //     }
+    // }
+
+    .coloured {@extend %shadow;}
+
+    & > *:last-child {
+        margin-bottom:0;
+    }
+
+    .grid__item & {
+        margin:0 0 $bsu;
+    }
+
+    @include aboveOrEquals(pem(480))
+    {
+        &.coloured {
+            padding:$bsu;
+            margin:0 $bsu $bsu;
+            // @include border-radius($bsu/8);    
+            .grid__item & {
+                margin:0 0 $bsu;
+            }
+        }        
+    }
+
+    @include box-shadow(0px 4px 0px rgba(black,0.22));
+}
+
+.module__map {
+    padding:0;    
+    @include box-shadow(none);
+    .container {
+        padding-top:80%;
+        margin-bottom:0;
+
+        @include aboveOrEquals(pem(320))
+        {
+            padding-top:50%;
+        }
+
+        @include aboveOrEquals(pem(768))
+        {
+            padding-top:30%;
+        }
+    }
+}
+
+.module__status {
+    p { font-size:1.5em; }
+}
+
+.module__advice {
+
+    .body {
+        @extend .cf;
+        margin-bottom:$bsu;
+    }
+
+    .content {}
+
+    .data {
+        @extend .colours-head;
+        padding:$bsu/2;
+    }
+
+    @include media-query(lap){
+        .content {
+            width:70%;
+            float:left;
+            padding-right:$bsu
+        }
+        .data {
+            width:30%;
+            float:right;
+            position:relative;
+            top:-$bsu/4;
+        }
+    }
+
+    @include media-query(desk){
+        .content {width:80%;}
+        .data {width:20%;}
+    }
+}

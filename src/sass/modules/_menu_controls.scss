@@ -1,0 +1,96 @@
+.menu_controls {    
+
+    .module {
+        padding:$bsu/2;
+        // background-color:rgba(black,0.4);
+        // @include belowOrEquals(pem(480))
+        // {
+        //     @include box-shadow(inset pem(7) 0 pem(14) pem(-4) rgba(black, 0.25));    
+        // }
+        @include aboveOrEquals(pem(768))
+        {
+            @include box-sizing("border-box");
+            @include inline-block();
+            $m:2%;
+            width:50%-(2*$m);
+            margin:$m;
+            vertical-align:top;
+        }        
+    }
+    
+    .status__box {
+        border:none;
+    }
+    .close-btn {
+        display: none;
+    }
+    .split {
+        margin:$bsu/4 0 $bsu/2;
+    }
+    .split__title {
+        @extend .third-face;
+        @extend .gamma;
+        padding-top:0.05em;
+    }    
+
+    ul {
+        list-style:none;
+        display:block;
+        width:100%;
+        background:$citu-grey;
+        margin-left:0;
+
+        > li {
+            display:block;
+            text-align:center;
+
+            > a{
+                display:block;
+                padding:$bsu/2 $bsu;                
+                text-decoration:none;
+
+                &:hover {
+                    background-color:rgba(white,0.21);
+                }
+            }
+
+            &:last-child a { border:none }
+        }
+    }            
+
+    .close-btn {
+        position: absolute;
+        top: pem(30);
+        left: pem(30);
+    }
+
+    li {
+        position: relative;
+        border-top: 1px solid rgba(255,255,255, 0.1);
+
+        &:last-child {
+            border-bottom: 1px solid rgba(255,255,255, 0.1);
+        }
+
+        &.is-active:after {
+            z-index: 50;
+            display: block;
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: pem(-0.5);
+            margin-top: pem(-10);
+            border-top: pem(10) transparent solid;
+            border-bottom: pem(10) transparent solid;
+            border-right: pem(10) #fff solid;
+        }
+
+        a {
+            padding: pem(12, 14) pem(30, 14);
+        }
+    }
+
+    ul > li {
+        text-align:left;
+    }
+}
