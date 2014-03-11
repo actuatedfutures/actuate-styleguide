@@ -17,53 +17,53 @@
     }
 }
 
+@mixin graphStyle($col)
+{
+    color:$col;
+    line {stroke:$col}
+    text {fill:$col}
+    .square {background-color:$col}
+}
+
 .svgGraph {
 
     // @extend .colours-turq;
     // padding:$bsu;
     // margin-top:-$bsu;
     
-    .graph--background {fill:$lk-turq;}
+    .graph--background {
+        fill:$lk-turq;
+    }
 
-    @mixin graphStyle($col)
-    {
-        color:$col;
-        line {stroke:$col}
-        text {fill:$col}
-        .square {background-color:$col}
+    /*
+        Last months usage
+    */        
+    .label-last {fill:$lk-sea;}
+    .graph--area--prev {fill:$lk-sea; opacity:0.9;}
+
+    /*
+        This months usage
+    */        
+    .label-this {fill:$lk-blue;}    
+    .graph--area {fill:$lk-blue; opacity:0.9;}
+
+    .label-average {fill:$lk-maroon;}    
+
+    .today {
+        color:$lk-blue;
+        text-anchor:start;
+        font-size:1.2em;
     }
     
-    .graph--previous {
-        @include graphStyle($lk-white);
-    }
-
-    .graph--sofar {
-        @include graphStyle($citu-yellow);
-    }
-
-    .graph--average {
-        @include graphStyle($lk-beige);   
-        .square {
-            background-color:transparent;            
-            border-top:1px dashed $lk-beige;
-        }
-    }
-    
-    .graph--area {
-        fill:$citu-yellow;
-        opacity:0.7;   
-    }
-
-    .graph--area--prev {
-        fill:$lk-white;
-        opacity:0.9;   
-    }
-
-    .axis path {
-      fill: none;
-      stroke: #FFF;
-      shape-rendering: crispEdges;
-    }
+    /*
+        
+    */
+    .axis path.domain {
+        opacity:0;
+        fill: none;
+        stroke: rgba(black,0.1);
+        shape-rendering: crispEdges;
+    }    
 
     .tick {
         line {
@@ -77,11 +77,21 @@
         text {
             display:none;
         }
-    }    
+    }
+}
+
+.graph--previous {@include graphStyle($lk-sea);}
+.graph--sofar {@include graphStyle($lk-blue);}
+.graph--average {
+    @include graphStyle($lk-maroon);   
+    .square {
+        background-color:transparent;            
+        border-top:1px dashed $lk-beige;
+    }
 }
 
 .key {
-    margin:0;padding:0;
+    margin:0 0 $bsu;padding:0;
     list-style:none;
 
     .square {
@@ -95,7 +105,6 @@
         line-height:1;
     }
 
-    margin-left:8%;
 }
 
 .daily__graph {
