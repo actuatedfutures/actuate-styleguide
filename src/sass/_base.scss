@@ -101,10 +101,6 @@ label {
     color:white;
 }
 
-.block-list, .block-list li {
-    border-color:rgba(black,0.2);
-}
-
 .hi {
     @extend .brand-face;
     @extend .-hi;

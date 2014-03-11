@@ -110,7 +110,8 @@ gulp.task('libScripts',function()
         .pipe(header("/*! bower_components/${file.relative} */\n",{foo:'bar'}))
         .pipe(concat("all.min.js"))
         .pipe(gulp.dest('build/js'))
-        .pipe(livereload(slr));
+        // .pipe(livereload(slr))
+        ;
 });
 
 /*
@@ -119,7 +120,7 @@ gulp.task('libScripts',function()
 gulp.task('scripts',function()
 {
     return gulp.src('src/js/**/*.js')
-        .pipe(changed('lrl'))
+        .pipe(changed('build/js'))
         .pipe(uglify())  
         .pipe(gulp.dest('build/js'))        
         .pipe(livereload(slr));
@@ -179,7 +180,7 @@ gulp.task('watch', function() {
         });
 
         // Watch JS library conf
-        gulp.watch('src/js/allJS.conf', function(event) {
+        gulp.watch(['src/js/allJS.conf','src/js/actuate/**/*.js'], function(event) {
             message(event,'');
             gulp.run('libScripts');
         });

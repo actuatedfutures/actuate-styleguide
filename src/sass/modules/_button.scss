@@ -28,7 +28,7 @@
     padding:$bsu*0.5;
     text-transform:uppercase;
     
-    [class*="icon-"] {
+    .icon {
         position:relative;
         float:right;
         font-size:1.5em;
@@ -45,7 +45,7 @@
         color:white;
         background-color:rgba(black,0.42);
 
-        [class*="icon-"] {
+        .icon {
             color:white;
         }
     }

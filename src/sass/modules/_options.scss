@@ -1,8 +1,9 @@
+
 /*
     from inuit
 */
 
-.linkgroup {
+.options {
 
     @extend .nav--stacked;
     border-radius:4px;
@@ -21,7 +22,6 @@
             }
         }        
     }
-
 
     @include aboveOrEquals(pem(480))
     {

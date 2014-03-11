@@ -4,6 +4,7 @@
     position:relative;
     z-index:42;    
     font-size:1.5em;
+    margin-bottom:$bsu/4;
 
     @include aboveOrEquals(pem(480)) {        
         font-size:2em;
@@ -28,15 +29,16 @@
     }
 
     a {
-        color:inherit;
+        color:$lk-blue;
         text-decoration:none;
         &:active,
         &:hover {
-            color:$lk-blue;
+            color:$lk-sea;
         }
     }    
 
     .icon {
+        color:$lk-red;
         position:absolute;        
         top:($bsu) - 0.5;
 
@@ -60,17 +62,15 @@
 
     .icon__control {
         right:$bsu/2;
-        &:after {
-            content:'control';
-        }
+        &:after {content:'control';}
+        .show-right &:after {content:'close';}
     }
 
     .icon__menu {
         left:$bsu/2;
         span {margin:0;}
-        &:after {
-            content:'menu';
-        }
+        &:after {content:'menu';}
+        .show-left &:after {content:'close';}
     }
 
     @include aboveOrEquals(pem(480))

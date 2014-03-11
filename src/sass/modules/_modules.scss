@@ -1,7 +1,7 @@
 .module {
     clear:both;
     padding:0;
-    margin:$bsu/4 $bsu/4 $bsu/2;    
+    margin:0 $bsu/4 $bsu/2;    
     @extend .-cream;
 
     .module__header {
@@ -59,7 +59,7 @@
 
     @include aboveOrEquals(pem(480))
     {
-        margin:$bsu;
+        margin:0 $bsu $bsu;
         // .grid__item & {
         //     margin:0 0 $bsu;
         // }

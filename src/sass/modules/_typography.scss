@@ -28,15 +28,15 @@
     border-bottom:none;
 }
 
-
 .page-title {
     @extend .brand-face;
     color:rgba(black,0.2);
     font-size:1.5em;
     line-height:1;
     text-align:left;
-    font-weight:700;    
-    margin:$bsu/2 $bsu;
+    font-weight:700; 
+    padding:0;   
+    margin:0 $bsu $bsu/2;
     text-transform:uppercase;
     letter-spacing:0.15em;
     text-align:center;
@@ -47,11 +47,11 @@
     }
 }
 
-.icon--right {
-    float:right;
-    position:relative;
-    top:-1px;   
-}
+// .icon--right {
+//     float:right;
+//     position:relative;
+//     top:-1px;   
+// }
 
 .icon--heading {
     display:none;

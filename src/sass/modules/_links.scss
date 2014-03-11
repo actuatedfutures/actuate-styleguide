@@ -1,15 +1,15 @@
 .link-group {
     @extend .-cream;
-    border:none;
+    border:1px solid rgba(black,0.1);
     @include border-radius(8px); 
     overflow:hidden;
 
     li {
-        border-bottom:1px solid rgba(black,0.2);
+        border-bottom:1px solid rgba(black,0.1);
         &:last-child {border:none;}
         
         &:hover {
-            @extend .-mustard;
+            background-color:rgba(white,0.76);
         }
         a {
             text-decoration:none;
