@@ -1,43 +1,54 @@
-"undefined" == typeof actuate && (actuate = {}),
-function($, o)
-{
-    o.controlSwitchLogic = function(o, c)
+/*! Actuate: controlSwitchLogic */
+/* jshint laxcomma:true */
+
+// just to be safe.
+if (typeof(actuate) == "undefined") actuate = {};
+
+(function( $, actuate ) {
+    
+    actuate.controlSwitchLogic = function(type,callback)
     {
-        this.api = "/api/control/" + o, 
-        this.control = $(".module--control .control a"), 
-        this.cover = $(".module--control .cover"), 
-        this.stext = $(".module--control .status"), 
-        this.callback = c;
-        
-        var e = this;
+        this.api      = '/api/control/'+type;
+        this.control  = $('.module--control .control a');
+        this.cover    = $('.module--control .cover');
+        this.stext    = $('.module--control .status');
+        this.callback = callback;
+        var _this = this;
 
-        $.getJSON(this.api, function(t)
-        {
-            "on" == t.status ? (e.stext.text("ON"), e.cover.addClass("on")) : (e.cover.removeClass("on"), e.stext.text("OFF")), e.callback(t)
-        }), 
-
-        this.control.on("click", function(o)
-        {
-            o.preventDefault(), 
-            e.cover.toggleClass("on");
-            
-            var c;
-            
-            if (e.cover.hasClass("on"))
+        $.getJSON(this.api,function(data,status,x)
+        {        
+            if (data.status == 'on')
             {
-                
-                e.stext.text("ON"); 
-                c = {status: "on"};
+                _this.stext.text('ON');
+                _this.cover.addClass('on');
+            } else {
+                _this.cover.removeClass('on');
+                _this.stext.text('OFF');
+            }
+            _this.callback(data);
+        });
+
+        this.control.on('click',function(e)
+        {
+            e.preventDefault();
+            _this.cover.toggleClass('on');
+            
+            var postdata;
+            
+            if (_this.cover.hasClass('on')) 
+            {
+                _this.stext.text('ON');
+                postdata = {status:'on'};
+            } else {
+                postdata = {status:'off'};
+                _this.stext.text('OFF');
             }
 
-            e.cover.hasClass("on") ? (e.stext.text("ON"), c = {
-                status: "on"
-            }) : (c = {
-                status: "off"
-            }, e.stext.text("OFF")), t.post(e.api, c, function()
+            $.post(_this.api, postdata, function(data, status, xhr)
             {
-                e.callback(c)
-            })
-        })
+                _this.callback(postdata);
+            });
+        });  
     }
-}(jQuery, actuate);
+
+})( jQuery, actuate );

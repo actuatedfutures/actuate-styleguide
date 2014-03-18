@@ -1,4 +1,4 @@
-var gulp 	     = require('gulp'),
+    var gulp 	     = require('gulp'),
     gutil        = require('gulp-util'),
     fs 	         = require('fs'),
     changed      = require('gulp-changed'),
@@ -58,17 +58,30 @@ gulp.task('styles',function()
     ----- JEKYLL -----
 */
 paths.jekyll = ['build/**/*.{html,yml,md,mkd,markdown,php}','build/_config.yml'];
+// gulp.task('jekyll',function()
+// {
+//     /* jekyll */
+//     return gulp.src(paths.jekyll)
+//         .pipe(jekyll({
+//             source: 'build',
+//             destination: '.jekyll',
+//             // bundleExec:true,
+//         }))
+//         .pipe(gulp.dest('.jekyll'))
+//         .pipe(livereload(slr));
+// });
+
 gulp.task('jekyll',function()
 {
-    /* jekyll */
-    return gulp.src(paths.jekyll)
-        .pipe(jekyll({
-            source: './build',
-            destination: '.jekyll',
-            // bundleExec:true,
-        }))
-        .pipe(gulp.dest('.jekyll'))
-        .pipe(livereload(slr));
+    var spawn   = require('child_process').spawn,
+        j       = spawn('jekyll', [
+                    '-s', 'build',
+                    '-d', '.jekyll',
+                    '--config', 'build/_config.yml,build/_localconfig.yml'
+                    ]);
+    j.stdout.on('data', function (data) {
+        // console.log('' + data); // works fine
+    });
 });
 
 /*
@@ -149,7 +162,7 @@ gulp.task('bitmaps',function()
 /*
     ----- SERVER -----
 */
-gulp.task('serve', serve(['.jekyll','build']));
+gulp.task('serve',serve(['.jekyll','build']));
 
 /*
     ----- WATCH -----
@@ -192,11 +205,11 @@ gulp.task('watch', function() {
         })
 
         // Watch Jekyll files
-        // gulp.watch(paths.jekyll,function(event)
-        // {
-        //     message(event,'');
-        //     gulp.run('jekyll'); 
-        // })
+        gulp.watch(paths.jekyll,function(event)
+        {
+            message(event,'');
+            gulp.run('jekyll'); 
+        })
 
         gulp.watch(paths.livereload,function(event)
         {
@@ -218,5 +231,5 @@ gulp.task('watch', function() {
 */
 gulp.task('default', function(){
     gulp.run('watch');
-    // gulp.run('serve');
+    gulp.run('serve');
 });
